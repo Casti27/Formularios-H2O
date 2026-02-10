@@ -1,37 +1,78 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  text-align: center;
-  padding: 20px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-h1 {
-  margin-bottom: 30px;
+body {
+  background: #f4f6f9;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(135deg, #1f3c88, #3a6cf4);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
 }
 
 .menu {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  flex: 1;
 }
 
-.menu a {
-  background: #007bff;
-  color: white;
-  padding: 15px;
-  border-radius: 10px;
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
   text-decoration: none;
-  font-size: 18px;
+  color: #333;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
 }
 
-.menu a:hover {
-  background: #0056b3;
+.card span {
+  font-size: 2.5rem;
 }
 
-/* Para tablets y PC */
-@media (min-width: 768px) {
-  .menu {
-    max-width: 400px;
-    margin: auto;
-  }
+.card h2 {
+  margin-top: 1rem;
+  font-size: 1.3rem;
 }
+
+.card p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
