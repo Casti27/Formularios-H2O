@@ -1,49 +1,47 @@
-/* ================= RESET ================= */
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-/* ================= BODY ================= */
+/* Fondo general */
 body {
-  min-height: 100vh;
-  background: #f4f6f9;
+  background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
   color: #333;
-  display: flex;
-  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* ================= HEADER ================= */
+/* Header */
 .header {
-  background: linear-gradient(135deg, #1f3c88, #3a6cf4);
-  color: #fff;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 40px 20px;
 }
 
 .header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.3rem;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
 }
 
 .header p {
+  color: #555;
   font-size: 1rem;
-  opacity: 0.9;
 }
 
-/* ================= CONTENEDOR ================= */
+/* Contenedor */
 .container {
-  flex: 1;
-  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
 }
 
-/* ================= GRID ================= */
+/* Grid de tarjetas */
 .grid {
   display: grid;
-  gap: 1.5rem;
-  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  align-items: stretch; /* 🔥 clave para igualar alturas */
 }
 
 /* 📱 Celular */
@@ -71,42 +69,51 @@ body {
 }
 
 /* ================= TARJETAS ================= */
+
+/* Tarjetas */
 .card {
   background: #ffffff;
-  border-radius: 14px;
-  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  padding: 30px 20px;
   text-decoration: none;
-  color: #333;
-  text-align: center;
-
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-
-  min-height: 230px;
-  max-width: 360px;
-  margin: 0 auto;
+  color: inherit;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* 🔥 centra contenido vertical */
+  align-items: center;
+  text-align: center;
 
-  transition: all 0.25s ease;
+  min-height: 200px; /* 🔥 todas del mismo tamaño */
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Emoji */
 .card span {
-  font-size: 2.6rem;
+  font-size: 3rem;
+  margin-bottom: 15px;
 }
 
+/* Título */
 .card h2 {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #00796b;
 }
 
+/* Texto */
 .card p {
-  margin-top: 0.5rem;
   font-size: 0.95rem;
-  color: #6b7280;
+  color: #555;
+  line-height: 1.4;
 }
 
 /* Hover estilo Power Apps */
