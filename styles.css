@@ -1,130 +1,88 @@
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, sans-serif;
 }
 
+/* CUERPO */
 body {
-  background: #f2f2f2;
-  color: #333;
-}
-
-/* ================= HEADER ================= */
-.topbar {
-  background: #0f6cbd;
-  color: white;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 8px;
-  margin: 1rem;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.logo span {
-  background: #1fa9e0;
-  padding: 0.4rem 0.6rem;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
-.user {
-  font-size: 1.4rem;
-}
-
-/* ================= GRID ================= */
-.container {
-  display: grid;
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-/* 📱 Celular */
-@media (max-width: 767px) {
-  .container {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* 📲 Tablets 10–11 pulgadas */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 900px;
-    margin: 0 auto;
-  }
-}
-
-/* 💻 Escritorio */
-@media (min-width: 1025px) {
-  .container {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-}
-
-/* ================= CARD ================= */
-.card {
-  background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  text-align: center;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-
-  min-height: 240px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  color: #fff;
 }
 
-.card img {
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  margin: 0 auto 1rem;
-  border-radius: 50%;
+/* TÍTULO */
+h1 {
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
 }
 
-.card h2 {
-  font-size: 1rem;
+/* CONTENEDOR DE TARJETAS */
+.menu {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 1rem;
+}
+
+/* TARJETAS */
+.menu a {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
   font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
 }
 
-.card p {
-  font-size: 0.85rem;
-  color: #666;
-  margin-top: 0.4rem;
+/* HOVER */
+.menu a:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.18);
 }
 
-.placeholder {
-  width: 110px;
-  height: 110px;
-  background: #e0e0e0;
-  border-radius: 50%;
-  margin: 0 auto 1rem;
-}
+/* 📱 CELULAR */
+@media (max-width: 600px) {
+  .menu {
+    grid-template-columns: 1fr;
+  }
 
-/* Hover solo en PC */
-@media (hover: hover) {
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  .menu a {
+    font-size: 1.2rem;
+    padding: 1.6rem;
   }
 }
 
-/* Cards deshabilitadas */
-.disabled {
-  cursor: default;
-  opacity: 0.85;
+/* 📲 TABLETS (incluye iPad 11") */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .menu {
+    grid-template-columns: repeat(2, minmax(240px, 320px));
+    justify-content: center;
+  }
+
+  .menu a {
+    font-size: 1.3rem;
+    padding: 1.8rem;
+  }
+}
+
+/* 💻 PC / PANTALLAS GRANDES */
+@media (min-width: 1025px) {
+  .menu {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
