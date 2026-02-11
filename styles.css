@@ -8,26 +8,54 @@
 
 /* Fondo general */
 body {
-  background: linear-gradient(135deg, #e0f7fa, #f1f8ff);
-  color: #333;
+  margin: 0;
+  position: relative;
   min-height: 100vh;
 }
 
-/* Header */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("/Patrón decorativo co.png") center/cover no-repeat;
+  z-index: -1;
+}
+
+
 .header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 60px 20px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* espacio entre logo y texto */
+  flex-wrap: wrap; /* se adapta en móvil */
+}
+
+.logo {
+  width: 90px; /* ajusta según tamaño del logo */
+  height: auto;
 }
 
 .header h1 {
-  font-size: 2.2rem;
-  margin-bottom: 8px;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 .header p {
-  color: #555;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
 }
+
 
 /* Contenedor */
 .container {
