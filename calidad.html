@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Área de Calidad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: 
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("https://res.cloudinary.com/daib0eknj/image/upload/v1770844213/patronCalidad_vitsc3.png") center/cover no-repeat;
+      z-index: -1;
+    }
+  .header {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* espacio entre logo y texto */
+  flex-wrap: wrap; /* se adapta en móvil */
+}
+
+.logo {
+  width: 90px; /* ajusta según tamaño del logo */
+  height: auto;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card h3 {
+      margin: 0;
+      color: #333;
+    }
+    .card p {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+  <div class="header-content">
+    <img src="https://res.cloudinary.com/daib0eknj/image/upload/v1770840245/Logo_H2O_st7uih.png" alt="Logo H2O" class="logo">
+    <div>
+      <h1>Área de Calidad</h1>
+    </div>
+  </div>
+</header>
+
+<div class="grid">
+
+  <div class="card" onclick="window.open('https://forms.gle/nUfv5t22kSeTAZCXA', '_blank')">
+    <h3>Registro y control - Normas higienicas</h3>
+    <p>Código: FO-C-036</p>
+  </div>
+
+  <div class="card" onclick="window.open('https://forms.gle/o6vFHrXTR65XXzgu9', '_blank')">
+    <h3>Monitorio de rinse</h3>
+    <p>Código: FO-C-023</p>
+  </div>
+  <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbxB0b2WbNWKSr_YSfPluGceMcn2jmBKlxfr2cRJ-W8TS1Zkor9zpWBAElwMhjeVSChFTg/exec', '_blank')">
+    <h3>Verificacion de contenido neto</h3>
+    <p>Código: FO-C-038</p>
+  </div>
+</div>
+
+</body>
+</html>

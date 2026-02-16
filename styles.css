@@ -1,0 +1,154 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+/* Fondo general */
+body {
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("https://res.cloudinary.com/daib0eknj/image/upload/v1770839313/patronBotellas_kn8m0g.png") center/cover no-repeat;
+  z-index: -1;
+}
+
+
+.header {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; /* espacio entre logo y texto */
+  flex-wrap: wrap; /* se adapta en móvil */
+}
+
+.logo {
+  width: 90px; /* ajusta según tamaño del logo */
+  height: auto;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+
+/* Contenedor */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Grid de tarjetas */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  align-items: stretch; /* 🔥 clave para igualar alturas */
+}
+
+/* 📱 Celular */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 📲 Tablet 11" (iPad Pro) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(260px, 340px));
+    justify-content: center;
+  }
+}
+
+/* 💻 PC */
+@media (min-width: 1025px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+}
+
+/* ================= TARJETAS ================= */
+
+/* Tarjetas */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-decoration: none;
+  color: inherit;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 🔥 centra contenido vertical */
+  align-items: center;
+  text-align: center;
+
+  min-height: 200px; /* 🔥 todas del mismo tamaño */
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Emoji */
+.card span {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+/* Título */
+.card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #00796b;
+}
+
+/* Texto */
+.card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Hover estilo Power Apps */
+@media (hover: hover) {
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: #3a6cf4;
+    box-shadow: 0 14px 30px rgba(58, 108, 244, 0.25);
+  }
+}
