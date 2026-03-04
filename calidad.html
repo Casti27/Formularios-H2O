@@ -32,12 +32,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px; /* espacio entre logo y texto */
-  flex-wrap: wrap; /* se adapta en móvil */
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .logo {
-  width: 90px; /* ajusta según tamaño del logo */
+  width: 90px;
   height: auto;
 }
 
@@ -78,6 +78,25 @@
       color: #666;
       font-size: 14px;
     }
+  .nav-btn, .back-btn {
+      background: linear-gradient(135deg, #4a90e2, #007BFF);
+      color:#fff;
+      border:none;
+      padding:10px 18px;
+      border-radius:8px;
+      font-size:1rem;
+      cursor:pointer;
+      margin:0 8px 20px 0;
+      display:inline-block;
+      text-decoration:none;
+      box-shadow:0 3px 6px rgba(0,0,0,0.15);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .nav-btn:hover, .back-btn:hover {
+      background: linear-gradient(135deg, #357ab8, #0056c0);
+      transform:translateY(-2px);
+      box-shadow:0 5px 10px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
@@ -91,43 +110,80 @@
   </div>
 </header>
 
-<div class="grid">
-
-  <div class="card" onclick="window.open('https://forms.gle/tpuU4EvP8wPBBf3Z8', '_blank')">
-    <h3>Registro y control - Normas higienicas</h3>
-    <p>Código: FO-C-036</p>
-  </div>
-
-  <div class="card" onclick="window.open('https://forms.gle/o6vFHrXTR65XXzgu9', '_blank')">
-    <h3>Monitorio de rinse</h3>
-    <p>Código: FO-C-023</p>
-  </div>
-  <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbyRKhe4kr-fsUvO4DIQJESTC5jNNLWREA_i_VSseaeGS9Wzn5qidNzyxOrSp7P5cCF8/exec', '_blank')">
-    <h3>Verificacion de contenido neto</h3>
-    <p>Código: FO-C-038</p>
-  </div>
-    <div class="card" onclick="window.open('https://forms.gle/PT1ha92gBpB1T1AZ9', '_blank')">
-    <h3>Registro y control de recepción de materia prima y material de empaque</h3>
-    <p>Código: FO-C-026</p>
-  </div>
-  <div class="card" onclick="window.open('https://forms.gle/SfSxn2zVV5LDSAA1A', '_blank')">
-    <h3>Análisis sensorial</h3>
-    <p>Código: FO-C-040</p>
-  </div>
-  <div class="card" onclick="window.open('https://drive.google.com/file/d/1-lNeB8Al2Mtx2YGiJkARAGZuYVT1CGc2/view?usp=sharing', '_blank')">
-    <h3>Tabla de preparación soluciones de limpieza y desinfección</h3>
-    <p>Código: AX-C-011</p>
-  </div>
-  <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbxMx1jMnqz6ztrfKXOjBDHKxlf75A2SaljN4mZ4trRIU18UwfiDjOUOZFFfGvoc6ZjGGw/exec', '_blank')">
-    <h3>Verificación presión de nitrogeno</h3>
-    <p>Código: FO-C-041</p>
-  </div>
-    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbwlPg_Rk1uHlegc7VQV13ISHfh8ZQNrwjPqtWY5N1H5wivZzM2FYo7rJFDg8yXHQfB2Kw/exec', '_blank')">
-    <h3>Monitoreo y control de PCC pasteurizador</h3>
-    <p>Código: FO-C-024</p>
+<!-- menú inicial con opciones -->
+<div id="menu">
+  <a href="index.html" class="nav-btn">← Volver a inicio</a>
+  <div class="grid">
+    <div class="card" onclick="showSection('formatos')">
+      <h3>Formatos</h3>
+    </div>
+    <div class="card" onclick="showSection('archivos')">
+      <h3>Archivos y consultas</h3>
+    </div>
   </div>
 </div>
 
+<!-- sección de formatos ocultada -->
+<div id="formatos" style="display:none;" class="section-content">
+  <button class="back-btn" onclick="backToMenu()">← Volver</button>
+  <div class="grid">
+    <div class="card" onclick="window.open('https://forms.gle/tpuU4EvP8wPBBf3Z8', '_blank')">
+      <h3>Registro y control - Normas higienicas</h3>
+      <p>Código: FO-C-036</p>
+    </div>
+    <div class="card" onclick="window.open('https://forms.gle/o6vFHrXTR65XXzgu9', '_blank')">
+      <h3>Monitorio de rinse</h3>
+      <p>Código: FO-C-023</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbyRKhe4kr-fsUvO4DIQJESTC5jNNLWREA_i_VSseaeGS9Wzn5qidNzyxOrSp7P5cCF8/exec', '_blank')">
+      <h3>Verificacion de contenido neto</h3>
+      <p>Código: FO-C-038</p>
+    </div>
+    <div class="card" onclick="window.open('https://forms.gle/PT1ha92gBpB1T1AZ9', '_blank')">
+      <h3>Registro y control de recepción de materia prima y material de empaque</h3>
+      <p>Código: FO-C-026</p>
+    </div>
+    <div class="card" onclick="window.open('https://forms.gle/SfSxn2zVV5LDSAA1A', '_blank')">
+      <h3>Análisis sensorial</h3>
+      <p>Código: FO-C-040</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbxMx1jMnqz6ztrfKXOjBDHKxlf75A2SaljN4mZ4trRIU18UwfiDjOUOZFFfGvoc6ZjGGw/exec', '_blank')">
+      <h3>Verificación presión de nitrogeno</h3>
+      <p>Código: FO-C-041</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbwlPg_Rk1uHlegc7VQV13ISHfh8ZQNrwjPqtWY5N1H5wivZzM2FYo7rJFDg8yXHQfB2Kw/exec', '_blank')">
+      <h3>Monitoreo y control de PCC pasteurizador</h3>
+      <p>Código: FO-C-024</p>
+    </div>
+    <div class="card" onclick="window.open('https://forms.gle/gEAs6UJCkrx6USUm7', '_blank')">
+      <h3>Recepción de preforma</h3>
+      <p>Código: FO-C-053</p>
+    </div>
+  </div>
+</div>
+
+<!-- sección de archivos oculta -->
+<div id="archivos" style="display:none;" class="section-content">
+  <button class="back-btn" onclick="backToMenu()">← Volver</button>
+  <div class="grid">
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1-lNeB8Al2Mtx2YGiJkARAGZuYVT1CGc2/view?usp=sharing', '_blank')">
+      <h3>Tabla de preparación soluciones de limpieza y desinfección</h3>
+      <p>Código: AX-C-011</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showSection(id) {
+  document.getElementById('menu').style.display = 'none';
+  document.getElementById(id).style.display = 'block';
+}
+function backToMenu() {
+  document.getElementById('formatos').style.display = 'none';
+  document.getElementById('archivos').style.display = 'none';
+  document.getElementById('menu').style.display = 'block';
+}
+</script>
 
 </body>
 </html>
