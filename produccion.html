@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Área de Calidad</title>
+  <title>Área de Producción</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="https://res.cloudinary.com/daib0eknj/image/upload/v1770840245/Logo_H2O_st7uih.png">
   <style>
@@ -21,37 +21,28 @@
         url("https://res.cloudinary.com/daib0eknj/image/upload/v1770839313/patronBotellas_kn8m0g.png") center/cover no-repeat;
       z-index: -1;
     }
-  .header {
-  text-align: center;
-  padding: 60px 20px;
-  color: white;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px; /* espacio entre logo y texto */
-  flex-wrap: wrap; /* se adapta en móvil */
-}
-
-.logo {
-  width: 90px; /* ajusta según tamaño del logo */
-  height: auto;
-}
-
-.header h1 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.header p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  margin: 0;
-}
+    .header {
+      text-align: center;
+      padding: 60px 20px;
+      color: white;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .logo {
+      width: 90px;
+      height: auto;
+    }
+    .header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -78,31 +69,84 @@
       color: #666;
       font-size: 14px;
     }
+    .nav-btn, .back-btn {
+      background: linear-gradient(135deg, #4a90e2, #007BFF);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 0 8px 20px 0;
+      display: inline-block;
+      text-decoration: none;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .nav-btn:hover, .back-btn:hover {
+      background: linear-gradient(135deg, #357ab8, #0056c0);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
 
   <header class="header">
-  <div class="header-content">
-    <img src="https://res.cloudinary.com/daib0eknj/image/upload/v1770840245/Logo_H2O_st7uih.png" alt="Logo H2O" class="logo">
-    <div>
-      <h1>Área de Calidad</h1>
+    <div class="header-content">
+      <img src="https://res.cloudinary.com/daib0eknj/image/upload/v1770840245/Logo_H2O_st7uih.png" alt="Logo H2O" class="logo">
+      <div>
+        <h1>Área de Producción</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- menú inicial con opciones -->
+  <div id="menu">
+    <a href="index.html" class="nav-btn">← Volver a inicio</a>
+    <div class="grid">
+      <div class="card" onclick="showSection('formatos')">
+        <h3>Formatos</h3>
+      </div>
+      <div class="card" onclick="showSection('archivos')">
+        <h3>Archivos y consultas</h3>
+      </div>
     </div>
   </div>
-</header>
 
-<div class="grid">
-
-  <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbytq2LFo144_Wdh52lBw_Rs5WUB8Eh2V7L19huoG1THGLn8RKZoNQY9I3K6vg2GysPM/exec', '_blank')">
-    <h3>Acta de reunión</h3>
-    <p>Código: FO-C-006</p>
+  <!-- sección de formatos -->
+  <div id="formatos" style="display:none;" class="section-content">
+    <button class="back-btn" onclick="backToMenu()">← Volver</button>
+    <div class="grid">
+      <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbytq2LFo144_Wdh52lBw_Rs5WUB8Eh2V7L19huoG1THGLn8RKZoNQY9I3K6vg2GysPM/exec', '_blank')">
+        <h3>Acta de reunión</h3>
+        <p>Código: FO-C-006</p>
+      </div>
+    </div>
   </div>
 
-  <div class="card" onclick="window.open('https:', '_blank')">
-    <h3>Segundo Formulario</h3>
-    <p>Código: FO-C-023</p>
+  <!-- sección de archivos -->
+  <div id="archivos" style="display:none;" class="section-content">
+    <button class="back-btn" onclick="backToMenu()">← Volver</button>
+    <div class="grid">
+      <div class="card" onclick="window.open('https://drive.google.com/file/d/1dJRK4tXYRDN-rSKWFqqxx7Ez9KpQN5Yl/view?usp=sharing', '_blank')">
+        <h3>Guía de procesos</h3>
+        <p>Código: FG-C-020</p>
+      </div>
+    </div>
   </div>
-</div>
+
+  <script>
+    function showSection(id) {
+      document.getElementById('menu').style.display = 'none';
+      document.getElementById(id).style.display = 'block';
+    }
+    function backToMenu() {
+      document.getElementById('formatos').style.display = 'none';
+      document.getElementById('archivos').style.display = 'none';
+      document.getElementById('menu').style.display = 'block';
+    }
+  </script>
 
 </body>
 </html>
