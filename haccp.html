@@ -78,6 +78,25 @@
         color: #666;
         font-size: 14px;
         }
+                .nav-btn {
+                    background: linear-gradient(135deg, #4a90e2, #007BFF);
+                    color: #fff;
+                    border: none;
+                    padding: 10px 18px;
+                    border-radius: 8px;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    margin: 0 8px 20px 0;
+                    display: inline-block;
+                    text-decoration: none;
+                    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+                    transition: transform .2s, box-shadow .2s;
+                }
+                .nav-btn:hover {
+                    background: linear-gradient(135deg, #357ab8, #0056c0);
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+                }
     </style>
     </head>
     <body>
@@ -90,6 +109,8 @@
         </div>
     </div>
     </header>
+
+    <a href="index.html" class="nav-btn">← Volver a inicio</a>
 
     <div class="grid">
 
