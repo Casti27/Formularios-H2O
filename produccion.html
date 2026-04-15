@@ -111,6 +111,9 @@
       <div class="card" onclick="showSection('archivos')">
         <h3>Archivos y consultas</h3>
       </div>
+      <div class="card" onclick="showSection('entrenamiento')">
+        <h3>Entrenamiento técnico</h3>
+      </div>
     </div>
   </div>
 
@@ -143,6 +146,21 @@
       </div>
     </div>
   </div>
+  <!-- sección de entrenamiento tecnico -->
+  <div id="entrenamiento" style="display:none;" class="section-content">
+    <button class="back-btn" onclick="backToMenu()">← Volver</button>
+    <div class="grid">
+      <div class="card" onclick="window.open('https://drive.google.com/file/d/1xr-03QdXSI1aZov6-zZI4QTa9yEIJp6K/view?usp=sharing', '_blank')">
+        <h3>Verificación de Brix</h3>
+      </div>
+      <div class="card" onclick="window.open('https://drive.google.com/file/d/19cF3b1PTtTxRRMHtq9AvX0jqHAy3mm0m/view?usp=drive_link', '_blank')">
+        <h3>LUP Etiqeutado</h3>
+      </div>
+      <div class="card" onclick="window.open('https://drive.google.com/file/d/1mQ8cgCN4GQf_nJQ5RiLWBTLEHUiy2MmR/view?usp=drive_link', '_blank')">
+        <h3>Control de residuos CIP</h3>
+      </div>
+    </div>
+  </div>
 
   <script>
     function showSection(id) {
@@ -152,6 +170,7 @@
     function backToMenu() {
       document.getElementById('formatos').style.display = 'none';
       document.getElementById('archivos').style.display = 'none';
+      document.getElementById('entrenamiento').style.display = 'none';
       document.getElementById('menu').style.display = 'block';
     }
   </script>
