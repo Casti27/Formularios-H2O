@@ -120,6 +120,9 @@
     <div class="card" onclick="showSection('archivos')">
       <h3>Archivos y consultas</h3>
     </div>
+    <div class="card" onclick="showSection('entrenamiento')">
+      <h3>Entrenamiento técnico</h3>
+    </div>
   </div>
 </div>
 
@@ -178,6 +181,28 @@
   </div>
 </div>
 
+<!-- sección de entrenamiento tecnico -->
+<div id="entrenamiento" style="display:none;" class="section-content">
+  <button class="back-btn" onclick="backToMenu()">← Volver</button>
+  <div class="grid">
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/15wgh9PsBgyGFByvuOa2w7WutAifcEKXq/view?usp=sharing', '_blank')">
+      <h3>Procedimiento PR-C-00X medición de turbidez</h3>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1HMhKYtYfDoyOo1dQpMs5ZRVsYThRX9dI/view?usp=sharing', '_blank')">
+      <h3>Procedimiento estandarizado para medición de ozono en sistema de tratamiento de agua</h3>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/109l_gXd9ffzl90oZbEpXIn6o8TsJNPrs/view?usp=sharing', '_blank')">
+      <h3>Procedimiento de medición de aluminio</h3>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1dN6T_EwDfOZnBJKBKyT01MW8mJBOEFzp/view?usp=sharing', '_blank')">
+      <h3>Procedimiento medición de conductividad eléctrica y solidos disueltos TOT</h3>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/15BxgUP99JV8A-AYny1tPsWyr0xnkiPVz/view?usp=sharing', '_blank')">
+      <h3>Procedimiento medición de cloro libre en agua</h3>
+    </div>
+  </div>
+</div>
+
 <!-- sección de archivos oculta -->
 <div id="archivos" style="display:none;" class="section-content">
   <button class="back-btn" onclick="backToMenu()">← Volver</button>
@@ -205,6 +230,7 @@ function showSection(id) {
 function backToMenu() {
   document.getElementById('formatos').style.display = 'none';
   document.getElementById('archivos').style.display = 'none';
+  document.getElementById('entrenamiento').style.display = 'none';
   document.getElementById('menu').style.display = 'block';
 }
 </script>
