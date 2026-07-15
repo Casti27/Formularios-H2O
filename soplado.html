@@ -1,0 +1,172 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+    <title>Área de Soplado</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/daib0eknj/image/upload/v1770840245/Logo_H2O_st7uih.png">
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background: #f4f6f8;
+        margin: 0;
+        padding: 20px;
+        }
+        body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: 
+            linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+            url("https://res.cloudinary.com/daib0eknj/image/upload/v1770839313/patronBotellas_kn8m0g.png") center/cover no-repeat;
+        z-index: -1;
+        }
+    .header {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    }
+
+    .logo {
+    width: 90px;
+    height: auto;
+    }
+
+    .header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    }
+
+    .header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0;
+    }
+        .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+        }
+        .card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: transform 0.2s;
+        }
+        .card:hover {
+        transform: scale(1.03);
+        }
+        .card h3 {
+        margin: 0;
+        color: #333;
+        }
+        .card p {
+        color: #666;
+        font-size: 14px;
+        }
+    .nav-btn, .back-btn {
+        background: linear-gradient(135deg, #4a90e2, #007BFF);
+        color:#fff;
+        border:none;
+        padding:10px 18px;
+        border-radius:8px;
+        font-size:1rem;
+        cursor:pointer;
+        margin:0 8px 20px 0;
+        display:inline-block;
+        text-decoration:none;
+        box-shadow:0 3px 6px rgba(0,0,0,0.15);
+        transition:transform .2s, box-shadow .2s;
+        }
+        .nav-btn:hover, .back-btn:hover {
+        background: linear-gradient(135deg, #357ab8, #0056c0);
+        transform:translateY(-2px);
+        box-shadow:0 5px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+    </head>
+    <body>
+
+    <header class="header">
+    <div class="header-content">
+        <img src="https://res.cloudinary.com/daib0eknj/image/upload/v1770840245/Logo_H2O_st7uih.png" alt="Logo H2O" class="logo">
+        <div>
+        <h1>Área de Soplado</h1>
+        </div>
+    </div>
+    </header>
+
+    <!-- menú inicial con opciones -->
+    <div id="menu">
+    <a href="index.html" class="nav-btn">← Volver a inicio</a>
+    <div class="grid">
+        <div class="card" onclick="showSection('formatos')">
+        <h3>Formatos</h3>
+        </div>
+        <div class="card" onclick="showSection('archivos')">
+        <h3>Archivos y consultas</h3>
+        </div>
+        <div class="card" onclick="showSection('entrenamiento')">
+        <h3>Entrenamiento técnico</h3>
+        </div>
+    </div>
+    </div>
+<!-- sección de formatos ocultada -->
+    <div id="formatos" style="display:none;" class="section-content">
+    <button class="back-btn" onclick="backToMenu()">← Volver</button>
+    <div class="grid">
+        <!-- <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbx6qpJ_hkzW9AfjZwpdNMtvX3bUt4j4OWjd-dEBPSmmAjmbUSi4tLr2QNqc4SMisiXJkg/exec', '_blank')">
+            <h3>Control de Vectores</h3>
+            <p>Código: FO-C-037</p>
+        </div> -->
+    </div>
+    </div>
+<!-- sección de entrenamiento tecnico -->
+    <div id="entrenamiento" style="display:none;" class="section-content">
+    <button class="back-btn" onclick="backToMenu()">← Volver</button>
+    <div class="grid">
+        <!-- <div class="card" onclick="window.open('https://drive.google.com/file/d/15wgh9PsBgyGFByvuOa2w7WutAifcEKXq/view?usp=sharing', '_blank')">
+            <h3>Procedimiento PR-C-00X medición de turbidez</h3>
+        </div> -->
+    </div>
+    </div>
+<!-- sección de archivos oculta -->
+    <div id="archivos" style="display:none;" class="section-content">
+    <button class="back-btn" onclick="backToMenu()">← Volver</button>
+    <div class="grid">
+        <!-- <div class="card" onclick="window.open('https://drive.google.com/file/d/1TyBhphMC0QCJ8_bzPfuBU7-YlSERQ_Ho/view?usp=sharing', '_blank')">
+            <h3>Matriz de desisción de saneamiento por tiempo de parada</h3>
+            <p>Código: MZ-C-014 </p>
+        </div> -->
+    </div>
+    </div>
+
+    <script>
+    function showSection(id) {
+    document.getElementById('menu').style.display = 'none';
+    document.getElementById(id).style.display = 'block';
+    }
+    function backToMenu() {
+    document.getElementById('formatos').style.display = 'none';
+    document.getElementById('archivos').style.display = 'none';
+    document.getElementById('entrenamiento').style.display = 'none';
+    document.getElementById('menu').style.display = 'block';
+    }
+    </script>
+
+    </body>
+    </html>
