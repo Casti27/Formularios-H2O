@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Área de Calidad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/daib0eknj/image/upload/v1770840245/Logo_H2O_st7uih.png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: 
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url("https://res.cloudinary.com/daib0eknj/image/upload/v1770839313/patronBotellas_kn8m0g.png") center/cover no-repeat;
+      z-index: -1;
+    }
+  .header {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 90px;
+  height: auto;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card h3 {
+      margin: 0;
+      color: #333;
+    }
+    .card p {
+      color: #666;
+      font-size: 14px;
+    }
+  .nav-btn, .back-btn {
+      background: linear-gradient(135deg, #4a90e2, #007BFF);
+      color:#fff;
+      border:none;
+      padding:10px 18px;
+      border-radius:8px;
+      font-size:1rem;
+      cursor:pointer;
+      margin:0 8px 20px 0;
+      display:inline-block;
+      text-decoration:none;
+      box-shadow:0 3px 6px rgba(0,0,0,0.15);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .nav-btn:hover, .back-btn:hover {
+      background: linear-gradient(135deg, #357ab8, #0056c0);
+      transform:translateY(-2px);
+      box-shadow:0 5px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+  <div class="header-content">
+    <img src="https://res.cloudinary.com/daib0eknj/image/upload/v1770840245/Logo_H2O_st7uih.png" alt="Logo H2O" class="logo">
+    <div>
+      <h1>Área de Calidad</h1>
+    </div>
+  </div>
+</header>
+
+<!-- menú inicial con opciones -->
+<div id="menu">
+  <a href="index.html" class="nav-btn">← Volver a inicio</a>
+  <div class="grid">
+    <div class="card" onclick="showSection('formatos')">
+      <h3>Formatos</h3>
+    </div>
+    <div class="card" onclick="showSection('archivos')">
+      <h3>Archivos y consultas</h3>
+    </div>
+    <div class="card" onclick="showSection('entrenamiento')">
+      <h3>Entrenamiento técnico</h3>
+    </div>
+  </div>
+</div>
+
+<!-- sección de formatos ocultada -->
+<div id="formatos" style="display:none;" class="section-content">
+  <button class="back-btn" onclick="backToMenu()">← Volver</button>
+  <div class="grid">
+    <div class="card" onclick="window.open('https://forms.gle/tpuU4EvP8wPBBf3Z8', '_blank')">
+      <h3>Registro y control - Normas higienicas</h3>
+      <p>Código: FO-C-036</p>
+    </div>
+    <div class="card" onclick="window.open('https://forms.gle/o6vFHrXTR65XXzgu9', '_blank')">
+      <h3>Monitorio de rinse</h3>
+      <p>Código: FO-C-023</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbyRKhe4kr-fsUvO4DIQJESTC5jNNLWREA_i_VSseaeGS9Wzn5qidNzyxOrSp7P5cCF8/exec', '_blank')">
+      <h3>Verificacion de contenido neto</h3>
+      <p>Código: FO-C-038</p>
+    </div>
+    <div class="card" onclick="window.open('https://forms.gle/PT1ha92gBpB1T1AZ9', '_blank')">
+      <h3>Registro y control de recepción de materia prima y material de empaque</h3>
+      <p>Código: FO-C-026</p>
+    </div>
+    <div class="card" onclick="window.open('https://forms.gle/SfSxn2zVV5LDSAA1A', '_blank')">
+      <h3>Análisis sensorial</h3>
+      <p>Código: FO-C-040</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbzgT8X7M7XXynCwiWl-2QUVHwwXUGcQA77IG16CC_QK20A7NiPcT4a_ZqJLKJ_8YsfRkw/exec', '_blank')">
+      <h3>Verificación presión de nitrogeno</h3>
+      <p>Código: FO-C-041</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbwlPg_Rk1uHlegc7VQV13ISHfh8ZQNrwjPqtWY5N1H5wivZzM2FYo7rJFDg8yXHQfB2Kw/exec', '_blank')">
+      <h3>Monitoreo y control de PCC pasteurizador</h3>
+      <p>Código: FO-C-024</p>
+    </div>
+    <div class="card" onclick="window.open('https://forms.gle/gEAs6UJCkrx6USUm7', '_blank')">
+      <h3>Recepción de preforma</h3>
+      <p>Código: FO-C-053</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbxFldMt3AOnUzOIL4KedUH2MWf4vMoiz_qhG59V7UQle6l285aFmaXcZeZukI_nU8uM3A/exec', '_blank')">
+      <h3>Liberacion de linea zonas en contacto directo al pto de CIP/COP</h3>
+      <p>Código: FO-C-003</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbxPCbq8SRpQQ-2TTxJA6BgRuDaclyqfPhcRri2GOJygIawpvVaSKpnM8nOzlgnueSN3/exec', '_blank')">
+      <h3>Verificación de torques</h3>
+      <p>Código: FO-C-54</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbzui6yRTdeb6XXmZDyPkoUeRopy653GUlWXYKFABBQWh0Xo_AwXZPvK41wtNRregkPi/exec', '_blank')">
+      <h3>Monitoreo y control de proceso tratamiento de agua potable</h3>
+      <p>Código: FO-C-019</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbzEDzg9l4Q3IdyniXFvb08VLWbba4zPPGctrml4z-3flMb7m1vIjeidb6XG4lKcHnKP/exec', '_blank')">
+      <h3>Análisis fisicoquímico de agua ptar</h3>
+      <p>Código: FO-C-019</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbx6qpJ_hkzW9AfjZwpdNMtvX3bUt4j4OWjd-dEBPSmmAjmbUSi4tLr2QNqc4SMisiXJkg/exec', '_blank')">
+      <h3>Control de Vectores</h3>
+      <p>Código: FO-C-037</p>
+    </div>
+    <div class="card" onclick="window.open('https://script.google.com/macros/s/AKfycbxPAVxpj__f4twns5TlEOdaNduLj1r7Ac7TbZrzWmEYop9l9s2iJ8czvax44l0NqpV_KQ/exec', '_blank')">
+      <h3>Formato generico de liberacion de cop en las llenadoras</h3>
+      <p>Código: FO-C-005</p>
+    </div>
+    <div class="card" onclick="window.open('...', '_blank')">
+      <h3>Aspersores ambientales</h3>
+      <p>Código: FO-C-049</p>
+    </div>
+  </div>
+</div>
+
+<!-- sección de entrenamiento tecnico -->
+<div id="entrenamiento" style="display:none;" class="section-content">
+  <button class="back-btn" onclick="backToMenu()">← Volver</button>
+  <div class="grid">
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/15wgh9PsBgyGFByvuOa2w7WutAifcEKXq/view?usp=sharing', '_blank')">
+      <h3>Procedimiento PR-C-00X medición de turbidez</h3>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1HMhKYtYfDoyOo1dQpMs5ZRVsYThRX9dI/view?usp=sharing', '_blank')">
+      <h3>Procedimiento estandarizado para medición de ozono en sistema de tratamiento de agua</h3>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/109l_gXd9ffzl90oZbEpXIn6o8TsJNPrs/view?usp=sharing', '_blank')">
+      <h3>Procedimiento de medición de aluminio</h3>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1dN6T_EwDfOZnBJKBKyT01MW8mJBOEFzp/view?usp=sharing', '_blank')">
+      <h3>Procedimiento medición de conductividad eléctrica y solidos disueltos TOT</h3>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/15BxgUP99JV8A-AYny1tPsWyr0xnkiPVz/view?usp=sharing', '_blank')">
+      <h3>Procedimiento medición de cloro libre en agua</h3>
+    </div>
+      <div class="card" onclick="window.open('https://drive.google.com/file/d/196pJ8bsY7uqSxBgZP7NkVXSsrifgJ69t/view?usp=sharing', '_blank')">
+        <h3>Medición de color de agua</h3>
+      </div>
+      <div class="card" onclick="window.open('https://drive.google.com/file/d/120KiJrm-3vK-Cce187P7l8fJ_jNdiIr-/view?usp=sharing', '_blank')">
+        <h3>sanitizacion filtro de carbon 2</h3>
+      </div>
+  </div>
+</div>
+
+<!-- sección de archivos oculta -->
+<div id="archivos" style="display:none;" class="section-content">
+  <button class="back-btn" onclick="backToMenu()">← Volver</button>
+  <div class="grid">
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1-lNeB8Al2Mtx2YGiJkARAGZuYVT1CGc2/view?usp=sharing', '_blank')">
+      <h3>Tabla de preparación soluciones de limpieza y desinfección</h3>
+      <p>Código: AX-C-011</p>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1MExr0-zSazvob0D9zwFrhQB1wYQWhgGW/view?usp=sharing', '_blank')">
+      <h3>Atributos de producto terminado Quala</h3>
+      <p>Código: AX-P-001</p>
+    </div>
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1TyBhphMC0QCJ8_bzPfuBU7-YlSERQ_Ho/view?usp=sharing', '_blank')">
+      <h3>Matriz de desisción de saneamiento por tiempo de parada</h3>
+      <p>Código: MZ-C-014 </p>
+    </div>
+  </div>
+</div>
+
+<script>
+function showSection(id) {
+  document.getElementById('menu').style.display = 'none';
+  document.getElementById(id).style.display = 'block';
+}
+function backToMenu() {
+  document.getElementById('formatos').style.display = 'none';
+  document.getElementById('archivos').style.display = 'none';
+  document.getElementById('entrenamiento').style.display = 'none';
+  document.getElementById('menu').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
