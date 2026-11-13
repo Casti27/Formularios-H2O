@@ -174,7 +174,7 @@
         <h3>PROCEDIMIENTO DE CIP LINEA 5</h3>
         <p>Código: PR-C-025</p>
       </div>
-    </ivdiv>
+    </div>
   </div>
   <!-- sección de entrenamiento tecnico -->
   <div id="entrenamiento" style="display:none;" class="section-content">
@@ -215,13 +215,19 @@
 
   <script>
     function showSection(id) {
+      document.querySelectorAll('.section-content').forEach(function (section) {
+        section.style.display = 'none';
+      });
       document.getElementById('menu').style.display = 'none';
-      document.getElementById(id).style.display = 'block';
+      const target = document.getElementById(id);
+      if (target) {
+        target.style.display = 'block';
+      }
     }
     function backToMenu() {
-      document.getElementById('formatos').style.display = 'none';
-      document.getElementById('archivos').style.display = 'none';
-      document.getElementById('entrenamiento').style.display = 'none';
+      document.querySelectorAll('.section-content').forEach(function (section) {
+        section.style.display = 'none';
+      });
       document.getElementById('menu').style.display = 'block';
     }
   </script>
